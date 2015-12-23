@@ -1,0 +1,15 @@
+---
+- hosts: jenkins-slaves
+  vars:
+    user:
+      name: ic
+      home: /iclinux
+      password: $1$SuperSal$pFllhQ6l8TxGqhd.HVyBG/
+
+
+  tasks:
+    - name: push yum.conf (proxy conf)
+      template: src=yum.conf owner=root dest=/etc/yum.conf mode=644
+      sudo: yes
+      when: ansible_os_family == "RedHat"
+      tags: proxy
