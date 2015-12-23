@@ -1,0 +1,55 @@
+= Test case for link:https://github.com/ansible/ansible/issues/13652[Ansible issue #13652]
+
+== How to reproduce
+
+* KO commit : link:https://github.com/batmat/ansible-issue-13652/commit/d3a145f3fa1b7b098d198972fdb4896af217adfd[d3a145f3fa1b7b098d198972fdb4896af217adfd]
+* OK commit : link:https://github.com/batmat/ansible-issue-13652/commit/e4d7189a5af5be3318195f5b39e857acfac174c5[e4d7189a5af5be3318195f5b39e857acfac174c5]
+
+== Informations about things/versions used outside the container:
+
+[source,shell]
+----
+$ docker version
+Client:
+ Version:      1.9.1
+ API version:  1.21
+ Go version:   go1.5.1
+ Git commit:   a34a1d5
+ Built:        Fri Nov 20 13:39:26 UTC 2015
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.9.1
+ API version:  1.21
+ Go version:   go1.5.1
+ Git commit:   a34a1d5
+ Built:        Fri Nov 20 13:39:26 UTC 2015
+ OS/Arch:      linux/amd64
+----
+
+
+[source,shell]
+----
+$ docker info
+Containers: 50
+Images: 459
+Server Version: 1.9.1
+Storage Driver: overlay
+ Backing Filesystem: extfs
+Execution Driver: native-0.2
+Logging Driver: json-file
+Kernel Version: 4.2.7-300.fc23.x86_64
+Operating System: Fedora 23 (Twenty Three)
+CPUs: 4
+Total Memory: 15.55 GiB
+Name: nhuitre.batmat
+ID: Y4LM:JCSQ:E2KZ:FWYU:OJ2R:CUGN:MRQD:FCAG:QXHL:4BPO:UC3K:OCVP
+Debug mode (server): true
+ File Descriptors: 17
+ Goroutines: 34
+ System Time: 2015-12-23T14:52:20.001653209+01:00
+ EventsListeners: 0
+ Init SHA1: 5717d0caa04fbf8b4c35e43ae5f9e68317a66903
+ Init Path: /usr/libexec/docker/dockerinit
+ Docker Root Dir: /var/lib/docker
+----
