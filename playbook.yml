@@ -9,7 +9,7 @@
 
   tasks:
     - name: push yum.conf (proxy conf)
-      template: src=yum.conf owner=root dest=/etc/yum.conf mode=644
+      template: src=yum.conf owner=root dest=/etc/yum.conf mode=644 state=file
       sudo: yes
       when: ansible_os_family == "RedHat"
       tags: proxy
